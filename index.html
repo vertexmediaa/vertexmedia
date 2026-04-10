@@ -1,84 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Vertex Media</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0d0d0d;
-      color: white;
-    }
-    header {
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      background: black;
-    }
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-    .btn {
-      padding: 12px 20px;
-      background: red;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 10px;
-      display: inline-block;
-      width: 250px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vertex Media | Creative Content Agency</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:#0b0b0f;
+  color:white;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: radial-gradient(circle at top, #1a1a2e, #0b0b0f);
+  padding:20px;
+}
+
+.hero h1{
+  font-size:50px;
+  font-weight:700;
+}
+
+.hero span{
+  color:#ff2e63;
+}
+
+.hero p{
+  margin-top:15px;
+  font-size:18px;
+  color:#bdbdbd;
+  max-width:600px;
+}
+
+.btn{
+  margin-top:25px;
+  padding:12px 25px;
+  background:#ff2e63;
+  color:white;
+  border:none;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#e02655;
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+h2{
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+/* SERVICES */
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card{
+  background:#16161d;
+  padding:25px;
+  border-radius:12px;
+  width:250px;
+  transition:0.3s;
+  border:1px solid #222;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#ff2e63;
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#ff2e63;
+}
+
+/* ABOUT */
+.about p{
+  max-width:700px;
+  margin:auto;
+  color:#bdbdbd;
+  line-height:1.6;
+}
+
+/* CONTACT */
+.contact{
+  background:#11111a;
+}
+
+.contact p{
+  margin:10px 0;
+  color:#bdbdbd;
+}
+
+.footer{
+  padding:20px;
+  text-align:center;
+  color:#666;
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-   Vertex Media
-</header>
+<!-- HERO -->
+<div class="hero">
+  <h1>Vertex <span>Media</span></h1>
+  <p>We create cinematic, high-impact content for modern brands that want to stand out and grow online.</p>
+  <a href="#contact" class="btn">Get in Touch</a>
+</div>
 
-<section>
-  <h1>We Create Cinematic Car Videos</h1>
-  <p>High-quality edits, reels, and content for car brands & owners.</p>
-  <a class="btn" href="#">Contact Us</a>
+<!-- ABOUT -->
+<section class="about">
+  <h2>Who We Are</h2>
+  <p>
+    Vertex Media is a creative content agency specializing in cinematic video production and social media content.
+    We help brands build a strong visual identity and attract attention through powerful storytelling.
+  </p>
 </section>
 
+<!-- SERVICES -->
 <section>
-  <h2>Our Packages</h2>
+  <h2>Our Services</h2>
+  <div class="services">
 
-  <div class="card">
-    <h3>Starter</h3>
-    <p>LKR 10,000</p>
-    <p>1 Reel + Basic Edit</p>
+    <div class="card">
+      <h3>Car Content</h3>
+      <p>Cinematic automotive reels, edits, and promotional videos for car businesses and owners.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cafés</h3>
+      <p>Aesthetic food & ambiance videos that highlight your café’s vibe and atmosphere.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cosmetic Brands</h3>
+      <p>Clean, premium product visuals designed to boost engagement and sales.</p>
+    </div>
+
+    <div class="card">
+      <h3>Gyms</h3>
+      <p>High-energy fitness content that inspires and attracts new members.</p>
+    </div>
+
   </div>
-
-  <div class="card">
-    <h3>Pro</h3>
-    <p>LKR 25,000</p>
-    <p>3 Reels + Cinematic Shots</p>
-  </div>
-
-  <div class="card">
-    <h3>Premium</h3>
-    <p>LKR 50,000</p>
-    <p>Full Video + Ads Content</p>
-  </div>
-
 </section>
 
-<section>
-  <h2>Contact</h2>
-  <p>Instagram: @vertexmedia.gth</p>
-  <p>WhatsApp: +94766518001</p>
-  <p>WhatsApp: +94767768852</p>
+<!-- WHY US -->
+<section class="about">
+  <h2>Why Vertex Media?</h2>
+  <p>
+    We don’t just shoot videos — we build content that sells, engages, and grows your brand.
+    Every project is tailored, cinematic, and optimized for social media platforms like Instagram and TikTok.
+  </p>
 </section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Let’s work together and bring your vision to life.</p>
+  <p><b>Instagram:</b> @vertexmedia.gth</p>
+  <p><b>WhatsApp:</b> +94766518001</p>
+  <p><b>WhatsApp:</b> +94767768852</p>
+
+
+  <a href="#" class="btn">Send Message</a>
+</section>
+
+<div class="footer">
+  © 2026 Vertex Media. All rights reserved.
+</div>
 
 </body>
 </html>
