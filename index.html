@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vertex Media | Creative Content Agency</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertex Media | We Make Brands Go Viral</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
   --dark:#050507;
   --card:#111116;
   --text:#bdbdbd;
-  --silver:#cfcfcf;
+  --silver:#d9d9d9;
 }
 
 *{
@@ -29,104 +29,120 @@ body{
   color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 .navbar{
   position:fixed;
   width:100%;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:15px 40px;
-  background:rgba(5,5,7,0.85);
-  backdrop-filter: blur(10px);
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
   z-index:1000;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 
 .logo img{
-  width:50px;
-}
-
-.logo h2{
-  font-weight:600;
-  color:var(--silver);
+  width:45px;
 }
 
 .nav-links a{
-  color:white;
   margin-left:25px;
+  color:white;
   text-decoration:none;
-  transition:0.3s;
 }
 
 .nav-links a:hover{
   color:var(--red);
 }
 
-/* HERO */
+/* HERO VIDEO */
 .hero{
+  position:relative;
   height:100vh;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:20px;
-  background:
-    radial-gradient(circle at center, rgba(255,46,99,0.15), transparent 60%),
-    var(--dark);
+  overflow:hidden;
+}
+
+.hero video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  top:0;
+  left:0;
+  z-index:-2;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
 }
 
 .hero h1{
-  font-size:56px;
-  font-weight:700;
-  letter-spacing:1px;
+  font-size:60px;
+  max-width:800px;
 }
 
 .hero span{
   color:var(--red);
-  text-shadow:0 0 15px rgba(255,46,99,0.6);
 }
 
 .hero p{
   margin-top:15px;
   color:var(--text);
-  max-width:600px;
 }
 
 .btn{
-  margin-top:30px;
-  padding:14px 30px;
-  background:linear-gradient(45deg, var(--red), #ff5c5c);
-  border:none;
-  border-radius:10px;
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 28px;
+  background:var(--red);
+  border-radius:8px;
+  text-decoration:none;
   color:white;
   font-weight:600;
-  text-decoration:none;
   transition:0.3s;
-  box-shadow:0 0 15px rgba(255,46,99,0.4);
 }
 
 .btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 25px rgba(255,46,99,0.7);
+  transform:scale(1.05);
 }
 
 /* SECTIONS */
 section{
-  padding:110px 20px;
+  padding:100px 20px;
   text-align:center;
 }
 
-h2{
-  font-size:34px;
-  margin-bottom:40px;
-  color:var(--silver);
+/* PORTFOLIO */
+.portfolio{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.portfolio video{
+  width:300px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.portfolio video:hover{
+  transform:scale(1.05);
 }
 
 /* SERVICES */
@@ -134,83 +150,50 @@ h2{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:25px;
+  gap:20px;
 }
 
 .card{
   background:var(--card);
-  padding:30px;
-  border-radius:14px;
-  width:260px;
-  border:1px solid #1f1f25;
-  transition:0.3s;
+  padding:25px;
+  border-radius:12px;
+  width:250px;
 }
 
 .card:hover{
-  transform:translateY(-10px) scale(1.02);
-  border-color:var(--red);
-  box-shadow:0 0 25px rgba(255,46,99,0.2);
+  border:1px solid var(--red);
 }
 
-.card h3{
-  color:var(--red);
-  margin-bottom:10px;
-}
-
-/* ABOUT */
-.about p{
-  max-width:700px;
-  margin:auto;
-  color:var(--text);
-  line-height:1.7;
-}
-
-/* CONTACT */
-.contact{
-  background:#0a0a0d;
-}
-
-.contact p{
-  color:var(--text);
-}
-
-/* SOCIALS */
-.socials{
-  margin-top:25px;
-}
-
+/* SOCIAL */
 .socials a{
-  font-size:24px;
+  font-size:26px;
   margin:0 12px;
   color:white;
-  transition:0.3s;
 }
 
 .socials a:hover{
   color:var(--red);
-  transform:scale(1.2);
 }
 
 /* FOOTER */
 .footer{
   padding:20px;
   color:#666;
-  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="navbar">
   <div class="logo">
-    <img src="logo.png" alt="Vertex Media Logo">
-    <h2>Vertex Media</h2>
+    <img src="logo.png">
+    <h3>Vertex Media</h3>
   </div>
 
   <div class="nav-links">
-    <a href="#about">About</a>
+    <a href="#work">Work</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </div>
@@ -218,51 +201,55 @@ h2{
 
 <!-- HERO -->
 <div class="hero">
-  <h1>VERTEX <span>MEDIA</span></h1>
-  <p>Cinematic content that grabs attention, builds brands, and drives results.</p>
-  <a href="#contact" class="btn">Work With Us</a>
+  <video autoplay muted loop>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div>
+    <h1>We Turn Content Into <span>Attention</span></h1>
+    <p>Cinematic videos that grow brands and go viral</p>
+    <a href="#contact" class="btn">Start Your Project</a>
+  </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <h2>Who We Are</h2>
-  <p>
-    Vertex Media is a high-end content agency focused on cinematic visuals,
-    storytelling, and performance-driven social media content.
-  </p>
+<!-- PORTFOLIO -->
+<section id="work">
+  <h2>Our Work</h2>
+
+  <div class="portfolio">
+    <!-- ADD YOUR VIDEOS -->
+    <video src="work1.mp4" controls></video>
+    <video src="work2.mp4" controls></video>
+    <video src="work3.mp4" controls></video>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-  <h2>Our Services</h2>
+  <h2>What We Do</h2>
 
   <div class="services">
     <div class="card">
-      <h3>Automotive</h3>
-      <p>Cinematic edits that make cars look unreal.</p>
+      <h3>Content Creation</h3>
+      <p>High-end cinematic videos</p>
     </div>
 
     <div class="card">
-      <h3>Cafés</h3>
-      <p>Clean aesthetic content that attracts customers.</p>
+      <h3>Social Growth</h3>
+      <p>Content optimized to go viral</p>
     </div>
 
     <div class="card">
-      <h3>Brands</h3>
-      <p>High-quality visuals that convert viewers into buyers.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fitness</h3>
-      <p>Energy-driven content that builds hype and growth.</p>
+      <h3>Branding</h3>
+      <p>Build a premium identity</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>Let’s build something powerful.</p>
+<section id="contact">
+  <h2>Let’s Work</h2>
+  <p>DM us or click below to start</p>
 
   <div class="socials">
     <a href="https://www.instagram.com/vertexmedia.gth" target="_blank">
@@ -274,13 +261,11 @@ h2{
     </a>
   </div>
 
-  <a href="https://wa.me/94766518001" class="btn" target="_blank">
-    Message on WhatsApp
-  </a>
+  <a href="https://wa.me/94766518001" class="btn">Message Us</a>
 </section>
 
 <div class="footer">
-  © 2026 Vertex Media. All rights reserved.
+  © 2026 Vertex Media
 </div>
 
 </body>
