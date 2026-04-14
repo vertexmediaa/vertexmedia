@@ -3,18 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vertex Media | We Make Brands Go Viral</title>
+<title>Vertex Media</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 :root{
-  --red:#ff2e63;
-  --dark:#050507;
-  --card:#111116;
-  --text:#bdbdbd;
-  --silver:#d9d9d9;
+  --light:#d4d4dc;
+  --mid:#393f4d;
+  --dark:#1d1e22;
 }
 
 *{
@@ -22,11 +20,12 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins', sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
   background:var(--dark);
-  color:white;
+  color:var(--light);
 }
 
 /* NAV */
@@ -36,7 +35,7 @@ body{
   display:flex;
   justify-content:space-between;
   padding:15px 40px;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.5);
   backdrop-filter:blur(10px);
   z-index:1000;
 }
@@ -48,20 +47,21 @@ body{
 }
 
 .logo img{
-  width:45px;
+  width:40px;
 }
 
 .nav-links a{
   margin-left:25px;
-  color:white;
+  color:var(--light);
   text-decoration:none;
+  transition:0.3s;
 }
 
 .nav-links a:hover{
-  color:var(--red);
+  color:white;
 }
 
-/* HERO VIDEO */
+/* HERO */
 .hero{
   position:relative;
   height:100vh;
@@ -87,38 +87,44 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.65);
   z-index:-1;
 }
 
 .hero h1{
-  font-size:60px;
+  font-size:55px;
   max-width:800px;
-}
-
-.hero span{
-  color:var(--red);
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s forwards;
 }
 
 .hero p{
   margin-top:15px;
-  color:var(--text);
+  color:#aaa;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s 0.3s forwards;
 }
 
 .btn{
   display:inline-block;
   margin-top:25px;
   padding:14px 28px;
-  background:var(--red);
+  background:var(--mid);
   border-radius:8px;
   text-decoration:none;
   color:white;
   font-weight:600;
   transition:0.3s;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s 0.6s forwards;
 }
 
 .btn:hover{
-  transform:scale(1.05);
+  background:white;
+  color:black;
 }
 
 /* SECTIONS */
@@ -127,59 +133,87 @@ section{
   text-align:center;
 }
 
-/* PORTFOLIO */
-.portfolio{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-
-.portfolio video{
-  width:300px;
-  border-radius:12px;
-  transition:0.3s;
-}
-
-.portfolio video:hover{
-  transform:scale(1.05);
-}
-
 /* SERVICES */
 .services{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
+  gap:25px;
 }
 
 .card{
-  background:var(--card);
-  padding:25px;
-  border-radius:12px;
-  width:250px;
+  background:var(--mid);
+  padding:30px;
+  border-radius:14px;
+  width:260px;
+  transition:0.3s;
 }
 
 .card:hover{
-  border:1px solid var(--red);
+  transform:translateY(-8px);
 }
 
-/* SOCIAL */
-.socials a{
-  font-size:26px;
-  margin:0 12px;
-  color:white;
+/* CONTACT */
+#contact{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:25px;
 }
 
-.socials a:hover{
-  color:var(--red);
+.contact-box{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:18px;
+  background:var(--mid);
+  padding:15px 25px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.contact-item:hover{
+  transform:scale(1.05);
+}
+
+.contact-item i{
+  font-size:22px;
 }
 
 /* FOOTER */
 .footer{
   padding:20px;
-  color:#666;
+  color:#777;
+  text-align:center;
 }
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 
@@ -193,7 +227,6 @@ section{
   </div>
 
   <div class="nav-links">
-    <a href="#work">Work</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </div>
@@ -201,31 +234,20 @@ section{
 
 <!-- HERO -->
 <div class="hero">
+  <!-- YOU CAN ADD YOUR ANIMATED LOGO VIDEO HERE -->
   <video autoplay muted loop>
     <source src="hero.mp4" type="video/mp4">
   </video>
 
   <div>
-    <h1>We Turn Content Into <span>Attention</span></h1>
-    <p>Cinematic videos that grow brands and go viral</p>
+    <h1>We Turn Content Into Attention</h1>
+    <p>Cinematic videos that grow brands</p>
     <a href="#contact" class="btn">Start Your Project</a>
   </div>
 </div>
 
-<!-- PORTFOLIO -->
-<section id="work">
-  <h2>Our Work</h2>
-
-  <div class="portfolio">
-    <!-- ADD YOUR VIDEOS -->
-    <video src="work1.mp4" controls></video>
-    <video src="work2.mp4" controls></video>
-    <video src="work3.mp4" controls></video>
-  </div>
-</section>
-
 <!-- SERVICES -->
-<section id="services">
+<section id="services" class="reveal">
   <h2>What We Do</h2>
 
   <div class="services">
@@ -247,26 +269,51 @@ section{
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="reveal">
   <h2>Let’s Work</h2>
-  <p>DM us or click below to start</p>
+  <p>Reach out and let's build something viral</p>
 
-  <div class="socials">
-    <a href="https://www.instagram.com/vertexmedia.gth" target="_blank">
+  <div class="contact-box">
+
+    <a href="https://www.instagram.com/vertexmedia.gth" target="_blank" class="contact-item">
       <i class="fab fa-instagram"></i>
+      <span>@vertexmedia.gth</span>
     </a>
 
-    <a href="https://www.tiktok.com/@vertexmedia.gth" target="_blank">
+    <a href="https://www.tiktok.com/@vertexmedia.gth" target="_blank" class="contact-item">
       <i class="fab fa-tiktok"></i>
+      <span>@vertexmedia.gth</span>
     </a>
+
+    <a href="https://wa.me/94766518001" target="_blank" class="contact-item">
+      <i class="fab fa-whatsapp"></i>
+      <span>+94 766 518 001</span>
+    </a>
+
   </div>
 
-  <a href="https://wa.me/94766518001" class="btn">Message Us</a>
+  <a href="https://wa.me/94766518001" class="btn">Message on WhatsApp</a>
 </section>
 
 <div class="footer">
   © 2026 Vertex Media
 </div>
+
+<script>
+// SCROLL ANIMATION
+window.addEventListener('scroll', () => {
+  const reveals = document.querySelectorAll('.reveal');
+
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if(elementTop < windowHeight - 100){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
