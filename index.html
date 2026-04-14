@@ -34,8 +34,8 @@ body{
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:15px 40px;
-  background:rgba(0,0,0,0.5);
+  padding:18px 50px;
+  background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
   z-index:1000;
 }
@@ -46,20 +46,27 @@ body{
   gap:10px;
 }
 
-.logo img{
-  width:40px;
-}
+.logo img{ width:40px; }
 
 .nav-links a{
-  margin-left:25px;
+  margin-left:30px;
   color:var(--light);
   text-decoration:none;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  background:white;
+  bottom:-5px;
+  left:0;
   transition:0.3s;
 }
 
-.nav-links a:hover{
-  color:white;
-}
+.nav-links a:hover::after{ width:100%; }
 
 /* HERO */
 .hero{
@@ -77,9 +84,9 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  top:0;
-  left:0;
   z-index:-2;
+  filter:brightness(0.6);
+  animation:zoom 20s infinite alternate;
 }
 
 .hero::after{
@@ -87,70 +94,97 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.65);
+  background:linear-gradient(to bottom, rgba(0,0,0,0.6), #1d1e22);
   z-index:-1;
 }
 
+@keyframes zoom{
+  from{ transform:scale(1.1); }
+  to{ transform:scale(1.2); }
+}
+
 .hero h1{
-  font-size:55px;
-  max-width:800px;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s forwards;
+  font-size:60px;
+  max-width:900px;
+}
+
+.hero span{
+  color:white;
 }
 
 .hero p{
   margin-top:15px;
   color:#aaa;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s 0.3s forwards;
+}
+
+.sub{
+  font-size:14px;
+  color:#888;
 }
 
 .btn{
   display:inline-block;
-  margin-top:25px;
-  padding:14px 28px;
-  background:var(--mid);
+  margin-top:30px;
+  padding:14px 32px;
+  background:white;
+  color:black;
   border-radius:8px;
   text-decoration:none;
-  color:white;
   font-weight:600;
   transition:0.3s;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s 0.6s forwards;
+  box-shadow:0 0 20px rgba(255,255,255,0.1);
 }
 
 .btn:hover{
-  background:white;
-  color:black;
+  transform:scale(1.08);
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
-  padding:100px 20px;
+  padding:120px 20px;
+  max-width:1100px;
+  margin:auto;
   text-align:center;
+}
+
+h2{
+  font-size:32px;
+}
+
+.section-desc{
+  color:#aaa;
+  margin:15px 0 50px;
 }
 
 /* SERVICES */
 .services{
   display:flex;
+  gap:30px;
   flex-wrap:wrap;
   justify-content:center;
-  gap:25px;
 }
 
 .card{
   background:var(--mid);
-  padding:30px;
-  border-radius:14px;
-  width:260px;
+  padding:35px;
+  border-radius:16px;
+  width:280px;
+  text-align:left;
   transition:0.3s;
 }
 
+.card i{
+  font-size:26px;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#bbb;
+  font-size:14px;
+}
+
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
 }
 
 /* CONTACT */
@@ -158,51 +192,45 @@ section{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:25px;
+  gap:30px;
 }
 
 .contact-box{
   display:flex;
-  gap:40px;
-  justify-content:center;
-  align-items:center;
+  gap:20px;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .contact-item{
   display:flex;
   align-items:center;
   gap:12px;
-  font-size:18px;
-  background:var(--mid);
-  padding:15px 25px;
-  border-radius:10px;
+  background:#2a2d36;
+  padding:16px 24px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
   transition:0.3s;
 }
 
 .contact-item:hover{
-  transform:scale(1.05);
+  transform:scale(1.07);
+  background:#353944;
 }
 
 .contact-item i{
-  font-size:22px;
+  font-size:20px;
 }
 
 /* FOOTER */
 .footer{
-  padding:20px;
-  color:#777;
+  padding:25px;
   text-align:center;
+  color:#777;
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
+/* SCROLL ANIMATION */
 .reveal{
   opacity:0;
   transform:translateY(40px);
@@ -213,7 +241,6 @@ section{
   opacity:1;
   transform:translateY(0);
 }
-
 </style>
 </head>
 
@@ -233,25 +260,51 @@ section{
 </div>
 
 <!-- HERO -->
-<h1>We Turn Content Into Attention</h1>
-<p>We create cinematic, scroll-stopping videos that make brands impossible to ignore.</p>
-<p style="margin-top:10px; color:#888; font-size:14px;">
-Built for Instagram. Optimized for TikTok. Designed to go viral.
-</p>
+<div class="hero">
+  <video autoplay muted loop>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div>
+    <h1>We Create Content That <span>Grabs Attention</span></h1>
+    <p>Cinematic, high-quality videos designed to grow your brand</p>
+    <p class="sub">Built for Instagram • Optimized for TikTok • Made to go viral</p>
+    <a href="#contact" class="btn">Start Your Project</a>
+  </div>
+</div>
 
 <!-- SERVICES -->
-<h2>What We Do</h2>
-<p style="color:#aaa; margin-bottom:40px;">
-We help brands grow through high-quality content and proven strategies.
-</p>
+<section id="services" class="reveal">
+  <h2>What We Do</h2>
+  <p class="section-desc">We help brands grow using content that actually performs</p>
+
+  <div class="services">
+    <div class="card">
+      <i class="fas fa-video"></i>
+      <h3>Content Creation</h3>
+      <p>Premium cinematic videos that make your brand stand out instantly.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Social Growth</h3>
+      <p>Strategic content designed to increase views, engagement, and followers.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-bolt"></i>
+      <h3>Viral Strategy</h3>
+      <p>We create content based on trends and proven formats that perform.</p>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="reveal">
-  <h2>Let’s Work</h2>
-  <p>Reach out and let's build something viral</p>
+  <h2>Let’s Build Something Viral</h2>
+  <p class="section-desc">Ready to grow your brand? Reach out below</p>
 
   <div class="contact-box">
-
     <a href="https://www.instagram.com/vertexmedia.gth" target="_blank" class="contact-item">
       <i class="fab fa-instagram"></i>
       <span>@vertexmedia.gth</span>
@@ -265,13 +318,15 @@ We help brands grow through high-quality content and proven strategies.
     <a href="https://wa.me/94766518001" target="_blank" class="contact-item">
       <i class="fab fa-whatsapp"></i>
       <span>+94 766 518 001</span>
-      <span>+94 767 768 852</span>
     </a>
 
+    <a href="https://wa.me/94767768852" target="_blank" class="contact-item">
+      <i class="fab fa-whatsapp"></i>
+      <span>+94 767 768 852</span>
+    </a>
   </div>
 
-  <a href="https://wa.me/94766518001" class="btn">Message on WhatsApp</a>
-  <a href="https://wa.me/94767768852" class="btn">Message on WhatsApp</a>
+  <a href="https://wa.me/94767768852" class="btn">Message Us</a>
 </section>
 
 <div class="footer">
@@ -279,15 +334,9 @@ We help brands grow through high-quality content and proven strategies.
 </div>
 
 <script>
-// SCROLL ANIMATION
 window.addEventListener('scroll', () => {
-  const reveals = document.querySelectorAll('.reveal');
-
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-
-    if(elementTop < windowHeight - 100){
+  document.querySelectorAll('.reveal').forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
       el.classList.add('active');
     }
   });
