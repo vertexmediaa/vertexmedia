@@ -15,7 +15,6 @@
   --dark:#1d1e22;
 }
 
-/* RESET */
 *{
   margin:0;
   padding:0;
@@ -24,7 +23,7 @@
   scroll-behavior:smooth;
 }
 
-/* REMOVE BLUE LINKS */
+/* REMOVE ALL DEFAULT LINK STYLES */
 a, a:visited, a:hover, a:active{
   text-decoration:none;
   color:inherit;
@@ -41,7 +40,7 @@ body{
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:15px 40px;
+  padding:18px 50px;
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
   z-index:1000;
@@ -56,7 +55,7 @@ body{
 .logo img{ width:40px; }
 
 .nav-links a{
-  margin-left:25px;
+  margin-left:30px;
   position:relative;
 }
 
@@ -90,7 +89,8 @@ body{
   height:100%;
   object-fit:cover;
   z-index:-2;
-  filter:brightness(0.7);
+  filter:brightness(0.6);
+  animation:zoom 20s infinite alternate;
 }
 
 .hero::after{
@@ -98,66 +98,93 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.6);
+  background:linear-gradient(to bottom, rgba(0,0,0,0.6), #1d1e22);
   z-index:-1;
 }
 
+@keyframes zoom{
+  from{ transform:scale(1.1); }
+  to{ transform:scale(1.2); }
+}
+
 .hero h1{
-  font-size:55px;
-  max-width:800px;
+  font-size:60px;
+  max-width:900px;
+  text-shadow:0 0 8px rgba(255,255,255,0.15);
 }
 
 .hero p{
   margin-top:15px;
-  color:#bbb;
+  color:#aaa;
 }
 
-/* BUTTON FIX */
+.sub{
+  font-size:14px;
+  color:#888;
+}
+
 .btn{
   display:inline-block;
-  margin-top:25px;
-  padding:14px 30px;
-  background:#d4d4dc; /* LIGHT so visible */
-  color:#1d1e22;
+  margin-top:30px;
+  padding:14px 32px;
+  background:white;
+  color:black;
   border-radius:8px;
   font-weight:600;
   transition:0.3s;
+  box-shadow:0 0 20px rgba(255,255,255,0.1);
 }
 
 .btn:hover{
-  transform:scale(1.07);
-  background:white;
+  transform:scale(1.08);
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
-  padding:100px 20px;
+  padding:120px 20px;
+  max-width:1100px;
+  margin:auto;
   text-align:center;
 }
 
-/* SERVICES */
+h2{
+  font-size:32px;
+}
+
+.section-desc{
+  color:#aaa;
+  margin:15px 0 50px;
+}
+
+/* CARDS */
 .services{
   display:flex;
+  gap:30px;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
 }
 
 .card{
   background:var(--mid);
-  padding:25px;
-  border-radius:12px;
-  width:250px;
+  padding:35px;
+  border-radius:16px;
+  width:280px;
+  text-align:left;
   transition:0.3s;
 }
 
-.card:hover{
-  transform:translateY(-8px);
+.card i{
+  font-size:24px;
+  margin-bottom:15px;
 }
 
-.card i{
-  font-size:22px;
-  margin-bottom:10px;
+.card p{
+  color:#bbb;
+  font-size:14px;
+}
+
+.card:hover{
+  transform:translateY(-10px);
 }
 
 /* CONTACT */
@@ -165,39 +192,48 @@ section{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:25px;
+  gap:30px;
 }
 
 .contact-box{
   display:flex;
   gap:20px;
-  justify-content:center;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .contact-item{
-  width:60px;
-  height:60px;
+  width:65px;
+  height:65px;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#2a2d36;
-  border-radius:12px;
+  border-radius:14px;
   transition:0.3s;
 }
 
 .contact-item i{
-  font-size:22px;
+  font-size:24px;
+  line-height:1;
 }
 
 .contact-item:hover{
-  transform:scale(1.1);
+  transform:scale(1.08);
   background:#353944;
+  box-shadow:0 0 15px rgba(255,255,255,0.1);
+}
+
+/* ICON FIX */
+i{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* FOOTER */
 .footer{
-  padding:20px;
+  padding:25px;
+  text-align:center;
   color:#777;
 }
 
@@ -237,41 +273,47 @@ section{
   </video>
 
   <div>
-    <h1>We Turn Content Into Attention</h1>
-    <p>Cinematic videos that grow brands and go viral</p>
+    <h1>We Create Content That Grabs Attention</h1>
+    <p>Cinematic videos that make brands impossible to ignore</p>
+    <p class="sub">Built for Instagram • Optimized for TikTok • Made to go viral</p>
     <a href="#contact" class="btn">Start Your Project</a>
+  </div>
+
+  <div style="position:absolute; bottom:20px; font-size:12px; color:#aaa;">
+    ↓ Scroll
   </div>
 </div>
 
 <!-- SERVICES -->
 <section id="services" class="reveal">
   <h2>What We Do</h2>
+  <p class="section-desc">We help brands grow using content that performs</p>
 
   <div class="services">
     <div class="card">
       <i class="fas fa-video"></i>
       <h3>Content Creation</h3>
-      <p>High-end cinematic videos</p>
+      <p>Premium cinematic videos that make your brand stand out.</p>
     </div>
 
     <div class="card">
       <i class="fas fa-chart-line"></i>
       <h3>Social Growth</h3>
-      <p>Content optimized to go viral</p>
+      <p>Content designed to increase views and engagement.</p>
     </div>
 
     <div class="card">
       <i class="fas fa-bolt"></i>
-      <h3>Branding</h3>
-      <p>Build a premium identity</p>
+      <h3>Viral Strategy</h3>
+      <p>Trend-based content built to perform and go viral.</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="reveal">
-  <h2>Let’s Work</h2>
-  <p>Reach out and let's build something viral</p>
+  <h2>Let’s Build Something Viral</h2>
+  <p class="section-desc">Reach out and let’s get started</p>
 
   <div class="contact-box">
 
@@ -287,14 +329,12 @@ section{
       <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- FIXED EMAIL -->
-    <a href="mailto:vertexmedia.gth@gmail.com?subject=Vertex%20Media%20Inquiry" class="contact-item">
+    <a href="mailto:yourgmail@gmail.com" class="contact-item">
       <i class="fas fa-envelope"></i>
     </a>
 
   </div>
 
-  <!-- BUTTON FIX -->
   <a href="https://wa.me/94767768852" class="btn">Message Us</a>
 </section>
 
@@ -304,13 +344,8 @@ section{
 
 <script>
 window.addEventListener('scroll', () => {
-  const reveals = document.querySelectorAll('.reveal');
-
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-
-    if(elementTop < windowHeight - 100){
+  document.querySelectorAll('.reveal').forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
       el.classList.add('active');
     }
   });
