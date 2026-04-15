@@ -15,6 +15,7 @@
   --dark:#1d1e22;
 }
 
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -23,7 +24,7 @@
   scroll-behavior:smooth;
 }
 
-/* remove link colors */
+/* REMOVE BLUE LINKS */
 a, a:visited, a:hover, a:active{
   text-decoration:none;
   color:inherit;
@@ -40,7 +41,7 @@ body{
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:18px 50px;
+  padding:15px 40px;
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
   z-index:1000;
@@ -55,7 +56,7 @@ body{
 .logo img{ width:40px; }
 
 .nav-links a{
-  margin-left:30px;
+  margin-left:25px;
   position:relative;
 }
 
@@ -89,8 +90,7 @@ body{
   height:100%;
   object-fit:cover;
   z-index:-2;
-  filter:brightness(0.6);
-  animation:zoom 20s infinite alternate;
+  filter:brightness(0.7);
 }
 
 .hero::after{
@@ -98,108 +98,66 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.6), #1d1e22);
+  background:rgba(0,0,0,0.6);
   z-index:-1;
 }
 
-@keyframes zoom{
-  from{ transform:scale(1.1); }
-  to{ transform:scale(1.2); }
-}
-
 .hero h1{
-  font-size:60px;
-  max-width:900px;
-  text-shadow:0 0 8px rgba(255,255,255,0.15);
+  font-size:55px;
+  max-width:800px;
 }
 
 .hero p{
   margin-top:15px;
-  color:#aaa;
+  color:#bbb;
 }
 
-.sub{
-  font-size:14px;
-  color:#888;
-}
-
+/* BUTTON FIX */
 .btn{
   display:inline-block;
-  margin-top:30px;
-  padding:14px 32px;
+  margin-top:25px;
+  padding:14px 30px;
+  background:#d4d4dc; /* LIGHT so visible */
+  color:#1d1e22;
   border-radius:8px;
-  text-decoration:none;
   font-weight:600;
   transition:0.3s;
 }
 
-/* primary button */
-.btn-primary{
+.btn:hover{
+  transform:scale(1.07);
   background:white;
-  color:black;
 }
 
-.btn-primary:hover{
-  transform:scale(1.08);
-}
-
-/* contact button (black highlight) */
-.btn-dark{
-  background:black;
-  color:white;
-}
-
-.btn-dark:hover{
-  transform:scale(1.08);
-  background:#111;
-}
-
-/* SECTION */
+/* SECTIONS */
 section{
-  padding:120px 20px;
-  max-width:1100px;
-  margin:auto;
+  padding:100px 20px;
   text-align:center;
 }
 
-h2{
-  font-size:32px;
-}
-
-.section-desc{
-  color:#aaa;
-  margin:15px 0 50px;
-}
-
-/* CARDS */
+/* SERVICES */
 .services{
   display:flex;
-  gap:30px;
   flex-wrap:wrap;
   justify-content:center;
+  gap:20px;
 }
 
 .card{
   background:var(--mid);
-  padding:35px;
-  border-radius:16px;
-  width:280px;
-  text-align:left;
+  padding:25px;
+  border-radius:12px;
+  width:250px;
   transition:0.3s;
 }
 
-.card i{
-  font-size:24px;
-  margin-bottom:15px;
-}
-
-.card p{
-  color:#bbb;
-  font-size:14px;
-}
-
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
+}
+
+.card i{
+  font-size:22px;
+  margin-bottom:10px;
 }
 
 /* CONTACT */
@@ -207,46 +165,39 @@ h2{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:30px;
+  gap:25px;
 }
 
 .contact-box{
   display:flex;
   gap:20px;
-  flex-wrap:wrap;
   justify-content:center;
+  flex-wrap:wrap;
 }
 
 .contact-item{
-  width:65px;
-  height:65px;
+  width:60px;
+  height:60px;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#2a2d36;
-  border-radius:14px;
+  border-radius:12px;
   transition:0.3s;
 }
 
 .contact-item i{
-  font-size:24px;
+  font-size:22px;
 }
 
 .contact-item:hover{
-  transform:scale(1.08);
+  transform:scale(1.1);
   background:#353944;
-}
-
-/* fix icon rendering */
-i{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* FOOTER */
 .footer{
-  padding:25px;
-  text-align:center;
+  padding:20px;
   color:#777;
 }
 
@@ -286,89 +237,41 @@ i{
   </video>
 
   <div>
-    <h1>We Create Content That Grabs Attention</h1>
-    <p>Cinematic videos that make brands impossible to ignore</p>
-    <p class="sub">Built for Instagram • Optimized for TikTok • Made to go viral</p>
-    <a href="#contact" class="btn btn-primary">Start Your Project</a>
+    <h1>We Turn Content Into Attention</h1>
+    <p>Cinematic videos that grow brands and go viral</p>
+    <a href="#contact" class="btn">Start Your Project</a>
   </div>
 </div>
 
 <!-- SERVICES -->
 <section id="services" class="reveal">
   <h2>What We Do</h2>
-  <p class="section-desc">We help brands grow using content that performs</p>
 
   <div class="services">
     <div class="card">
       <i class="fas fa-video"></i>
       <h3>Content Creation</h3>
-      <p>Premium cinematic videos that make your brand stand out.</p>
+      <p>High-end cinematic videos</p>
     </div>
 
     <div class="card">
       <i class="fas fa-chart-line"></i>
       <h3>Social Growth</h3>
-      <p>Content designed to increase views and engagement.</p>
+      <p>Content optimized to go viral</p>
     </div>
 
     <div class="card">
       <i class="fas fa-bolt"></i>
-      <h3>Viral Strategy</h3>
-      <p>Trend-based content built to perform and go viral.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="reveal">
-  <h2>Why Vertex Media</h2>
-  <p class="section-desc">We don’t just make content — we make content that performs</p>
-
-  <div class="services">
-    <div class="card">
-      <h3>Results Focused</h3>
-      <p>Every video is built to bring real growth.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fast Execution</h3>
-      <p>We deliver quickly and consistently.</p>
-    </div>
-
-    <div class="card">
-      <h3>Trend Driven</h3>
-      <p>We apply what’s working right now.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="reveal">
-  <h2>How It Works</h2>
-  <p class="section-desc">Simple, fast, and built for results</p>
-
-  <div class="services">
-    <div class="card">
-      <h3>1. Strategy</h3>
-      <p>We plan your content direction.</p>
-    </div>
-
-    <div class="card">
-      <h3>2. Creation</h3>
-      <p>We shoot and edit high-quality videos.</p>
-    </div>
-
-    <div class="card">
-      <h3>3. Growth</h3>
-      <p>Your content performs and scales.</p>
+      <h3>Branding</h3>
+      <p>Build a premium identity</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="reveal">
-  <h2>Let’s Build Something Viral</h2>
-  <p class="section-desc">Reach out and let’s get started</p>
+  <h2>Let’s Work</h2>
+  <p>Reach out and let's build something viral</p>
 
   <div class="contact-box">
 
@@ -384,13 +287,15 @@ i{
       <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a href="mailto:vertexmedia.gth@gmail.com" class="contact-item">
+    <!-- FIXED EMAIL -->
+    <a href="mailto:yourgmail@gmail.com?subject=Vertex%20Media%20Inquiry" class="contact-item">
       <i class="fas fa-envelope"></i>
     </a>
 
   </div>
 
-  <a href="https://wa.me/94767768852" class="btn btn-dark">Message Us</a>
+  <!-- BUTTON FIX -->
+  <a href="https://wa.me/94767768852" class="btn">Message Us</a>
 </section>
 
 <div class="footer">
@@ -399,8 +304,13 @@ i{
 
 <script>
 window.addEventListener('scroll', () => {
-  document.querySelectorAll('.reveal').forEach(el => {
-    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+  const reveals = document.querySelectorAll('.reveal');
+
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if(elementTop < windowHeight - 100){
       el.classList.add('active');
     }
   });
