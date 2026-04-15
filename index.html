@@ -23,7 +23,7 @@
   scroll-behavior:smooth;
 }
 
-/* REMOVE ALL DEFAULT LINK STYLES */
+/* remove link colors */
 a, a:visited, a:hover, a:active{
   text-decoration:none;
   color:inherit;
@@ -127,16 +127,31 @@ body{
   display:inline-block;
   margin-top:30px;
   padding:14px 32px;
-  background:white;
-  color:black;
   border-radius:8px;
+  text-decoration:none;
   font-weight:600;
   transition:0.3s;
-  box-shadow:0 0 20px rgba(255,255,255,0.1);
 }
 
-.btn:hover{
+/* primary button */
+.btn-primary{
+  background:white;
+  color:black;
+}
+
+.btn-primary:hover{
   transform:scale(1.08);
+}
+
+/* contact button (black highlight) */
+.btn-dark{
+  background:black;
+  color:white;
+}
+
+.btn-dark:hover{
+  transform:scale(1.08);
+  background:#111;
 }
 
 /* SECTION */
@@ -215,16 +230,14 @@ h2{
 
 .contact-item i{
   font-size:24px;
-  line-height:1;
 }
 
 .contact-item:hover{
   transform:scale(1.08);
   background:#353944;
-  box-shadow:0 0 15px rgba(255,255,255,0.1);
 }
 
-/* ICON FIX */
+/* fix icon rendering */
 i{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -276,11 +289,7 @@ i{
     <h1>We Create Content That Grabs Attention</h1>
     <p>Cinematic videos that make brands impossible to ignore</p>
     <p class="sub">Built for Instagram • Optimized for TikTok • Made to go viral</p>
-    <a href="#contact" class="btn">Start Your Project</a>
-  </div>
-
-  <div style="position:absolute; bottom:20px; font-size:12px; color:#aaa;">
-    ↓ Scroll
+    <a href="#contact" class="btn btn-primary">Start Your Project</a>
   </div>
 </div>
 
@@ -310,6 +319,52 @@ i{
   </div>
 </section>
 
+<!-- WHY US -->
+<section class="reveal">
+  <h2>Why Vertex Media</h2>
+  <p class="section-desc">We don’t just make content — we make content that performs</p>
+
+  <div class="services">
+    <div class="card">
+      <h3>Results Focused</h3>
+      <p>Every video is built to bring real growth.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fast Execution</h3>
+      <p>We deliver quickly and consistently.</p>
+    </div>
+
+    <div class="card">
+      <h3>Trend Driven</h3>
+      <p>We apply what’s working right now.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="reveal">
+  <h2>How It Works</h2>
+  <p class="section-desc">Simple, fast, and built for results</p>
+
+  <div class="services">
+    <div class="card">
+      <h3>1. Strategy</h3>
+      <p>We plan your content direction.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Creation</h3>
+      <p>We shoot and edit high-quality videos.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Growth</h3>
+      <p>Your content performs and scales.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="reveal">
   <h2>Let’s Build Something Viral</h2>
@@ -335,7 +390,7 @@ i{
 
   </div>
 
-  <a href="https://wa.me/94767768852" class="btn">Message Us</a>
+  <a href="https://wa.me/94767768852" class="btn btn-dark">Message Us</a>
 </section>
 
 <div class="footer">
