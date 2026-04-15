@@ -23,6 +23,12 @@
   scroll-behavior:smooth;
 }
 
+/* REMOVE ALL DEFAULT LINK STYLES */
+a, a:visited, a:hover, a:active{
+  text-decoration:none;
+  color:inherit;
+}
+
 body{
   background:var(--dark);
   color:var(--light);
@@ -50,8 +56,6 @@ body{
 
 .nav-links a{
   margin-left:30px;
-  color:var(--light);
-  text-decoration:none;
   position:relative;
 }
 
@@ -126,7 +130,6 @@ body{
   background:white;
   color:black;
   border-radius:8px;
-  text-decoration:none;
   font-weight:600;
   transition:0.3s;
   box-shadow:0 0 20px rgba(255,255,255,0.1);
@@ -173,7 +176,6 @@ h2{
 .card i{
   font-size:24px;
   margin-bottom:15px;
-  color:#d4d4dc;
 }
 
 .card p{
@@ -201,24 +203,31 @@ h2{
 }
 
 .contact-item{
-  width:60px;
-  height:60px;
+  width:65px;
+  height:65px;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#2a2d36;
-  border-radius:12px;
+  border-radius:14px;
   transition:0.3s;
 }
 
 .contact-item i{
-  font-size:22px;
-  color:white;
+  font-size:24px;
+  line-height:1;
 }
 
 .contact-item:hover{
-  transform:scale(1.1);
+  transform:scale(1.08);
   background:#353944;
+  box-shadow:0 0 15px rgba(255,255,255,0.1);
+}
+
+/* ICON FIX */
+i{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* FOOTER */
@@ -299,65 +308,6 @@ h2{
       <p>Trend-based content built to perform and go viral.</p>
     </div>
   </div>
-</section>
-
-<!-- WHY US -->
-<section class="reveal">
-  <h2>Why Vertex Media</h2>
-  <p class="section-desc">We don’t just make content — we make content that performs</p>
-
-  <div class="services">
-    <div class="card">
-      <i class="fas fa-bullseye"></i>
-      <h3>Results Focused</h3>
-      <p>Every video is built to bring real growth.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-clock"></i>
-      <h3>Fast Execution</h3>
-      <p>We deliver quickly and consistently.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-fire"></i>
-      <h3>Trend Driven</h3>
-      <p>We apply what’s working right now.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="reveal">
-  <h2>How It Works</h2>
-  <p class="section-desc">Simple, fast, and built for results</p>
-
-  <div class="services">
-    <div class="card">
-      <i class="fas fa-lightbulb"></i>
-      <h3>1. Strategy</h3>
-      <p>We plan your content direction.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-film"></i>
-      <h3>2. Creation</h3>
-      <p>We shoot and edit high-quality videos.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-rocket"></i>
-      <h3>3. Growth</h3>
-      <p>Your content performs and scales.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section>
-  <h2>Ready to Grow Your Brand?</h2>
-  <p class="section-desc">Let’s create content that actually works</p>
-  <a href="#contact" class="btn">Get Started</a>
 </section>
 
 <!-- CONTACT -->
