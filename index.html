@@ -23,10 +23,7 @@
   scroll-behavior:smooth;
 }
 
-a, a:visited, a:hover, a:active{
-  text-decoration:none;
-  color:inherit;
-}
+a{ text-decoration:none; color:inherit; }
 
 body{
   background:var(--dark);
@@ -39,10 +36,15 @@ body{
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:18px 40px;
+  align-items:center;
+  padding:15px 40px;
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
   z-index:1000;
+}
+
+.logo img{
+  height:35px;
 }
 
 /* HERO */
@@ -75,8 +77,9 @@ body{
 }
 
 .hero h1{
-  font-size:55px;
-  max-width:800px;
+  font-size:56px;
+  max-width:850px;
+  line-height:1.2;
 }
 
 .hero p{
@@ -84,16 +87,16 @@ body{
   color:#bbb;
 }
 
-/* BUTTON FIX */
+/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:30px;
-  padding:16px 36px;
+  padding:16px 38px;
   background:#d4d4dc;
-  color:#111; /* BLACK TEXT = VISIBLE */
+  color:#111;
   border-radius:10px;
   font-weight:700;
-  transition:0.25s ease;
+  transition:0.3s;
 }
 
 .btn:hover{
@@ -101,38 +104,47 @@ body{
   background:white;
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
-  padding:110px 20px;
+  padding:120px 20px;
   max-width:1100px;
   margin:auto;
   text-align:center;
 }
 
-/* SERVICES */
+.section-desc{
+  color:#aaa;
+  margin:15px 0 50px;
+}
+
+/* CARDS */
 .services{
   display:flex;
-  gap:25px;
+  gap:30px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
 .card{
   background:var(--mid);
-  padding:30px;
-  border-radius:14px;
-  width:260px;
+  padding:35px;
+  border-radius:16px;
+  width:270px;
   text-align:left;
   transition:0.3s;
 }
 
 .card i{
-  font-size:22px;
-  margin-bottom:10px;
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#bbb;
 }
 
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
 }
 
 /* CONTACT */
@@ -140,29 +152,29 @@ section{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:20px;
+  gap:25px;
 }
 
 .contact-box{
   display:flex;
-  gap:18px;
+  gap:20px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
 .contact-item{
-  width:65px;
-  height:65px;
+  width:70px;
+  height:70px;
   display:flex;
   align-items:center;
   justify-content:center;
   background:#2a2d36;
-  border-radius:12px;
+  border-radius:14px;
   transition:0.3s;
 }
 
 .contact-item i{
-  font-size:26px;
+  font-size:28px;
 }
 
 .contact-item:hover{
@@ -186,7 +198,6 @@ section{
 @media(max-width:768px){
   .hero h1{ font-size:34px; }
 }
-
 </style>
 </head>
 
@@ -194,7 +205,9 @@ section{
 
 <!-- NAV -->
 <div class="navbar">
-  <h3>Vertex Media</h3>
+  <div class="logo">
+    <img src="logo.png" alt="Vertex Media Logo">
+  </div>
 </div>
 
 <!-- HERO -->
@@ -213,24 +226,48 @@ section{
 <!-- SERVICES -->
 <section class="reveal">
   <h2>What We Do</h2>
+  <p class="section-desc">We help brands grow using content that performs</p>
 
   <div class="services">
     <div class="card">
       <i class="fas fa-video"></i>
       <h3>Content Creation</h3>
-      <p>High-end cinematic videos</p>
+      <p>High-end cinematic videos that capture attention.</p>
     </div>
 
     <div class="card">
       <i class="fas fa-chart-line"></i>
       <h3>Social Growth</h3>
-      <p>Content optimized to go viral</p>
+      <p>Content optimized to increase reach and engagement.</p>
     </div>
 
     <div class="card">
       <i class="fas fa-bolt"></i>
-      <h3>Branding</h3>
-      <p>Build a premium identity</p>
+      <h3>Viral Strategy</h3>
+      <p>We create trend-driven content that performs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="reveal">
+  <h2>How We Work</h2>
+  <p class="section-desc">Simple, fast, and focused on results</p>
+
+  <div class="services">
+    <div class="card">
+      <h3>1. Plan</h3>
+      <p>We understand your brand and create a strategy.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Create</h3>
+      <p>We shoot and edit high-quality content.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Grow</h3>
+      <p>Your content reaches more people and drives results.</p>
     </div>
   </div>
 </section>
@@ -238,10 +275,9 @@ section{
 <!-- CONTACT -->
 <section id="contact" class="reveal">
   <h2>Let’s Work</h2>
-  <p style="color:#aaa;">Follow Us</p>
+  <p class="section-desc">Follow Us</p>
 
   <div class="contact-box">
-
     <a href="https://www.instagram.com/vertexmedia.gth" class="contact-item">
       <i class="fab fa-instagram"></i>
     </a>
@@ -253,10 +289,8 @@ section{
     <a href="mailto:yourgmail@gmail.com" class="contact-item">
       <i class="fas fa-envelope"></i>
     </a>
-
   </div>
 
-  <!-- WHATSAPP BELOW -->
   <div class="contact-box">
     <a href="https://wa.me/94767768852" class="contact-item">
       <i class="fab fa-whatsapp"></i>
@@ -266,7 +300,6 @@ section{
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
-
 </section>
 
 <div class="footer">
